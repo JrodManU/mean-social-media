@@ -1,0 +1,6 @@
+<h3>New Message</h3>
+<form (ngSubmit)="onSubmit()" #newMessageForm="ngForm">
+  <textarea name="messageText" [(ngModel)]="message.text" #text="ngModel" required></textarea>
+  <p [hidden]="text.valid">Message is invalid.</p>
+  <button type="submit" [disabled]="!newMessageForm.form.valid">Submit</button>
+</form>
